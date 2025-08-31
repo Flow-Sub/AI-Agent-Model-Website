@@ -8,20 +8,21 @@ import {
   useReducedMotion,
   type Variants,
 } from "framer-motion";
-import { WobbleCard } from "@/components/ui/wobble-card";
+import WobbleCard from "@/components/ui/wobble-card";
 
 interface Stat {
   value: string;
   description: string;
+  hint?: string;
 }
 
 const stats: Stat[] = [
-  { value: "500+", description: "Businesses transformed" },
-  { value: "24/7", description: "Always-on AI support" },
-  { value: "4.9/5", description: "Client satisfaction score" },
-  { value: "1000+", description: "AI agents deployed worldwide" },
-  { value: "99.9%", description: "Enterprise-grade reliability" },
-  { value: "∞", description: "Scalable automations" },
+  { value: "500+", description: "Businesses transformed", hint: "Across SaaS, Retail, Fintech" },
+  { value: "24/7", description: "Always-on AI support", hint: "No queue, no downtime" },
+  { value: "4.9/5", description: "Client satisfaction score", hint: "NPS from onboarded clients" },
+  { value: "1000+", description: "AI agents deployed worldwide", hint: "Voice, chat & backend" },
+  { value: "99.9%", description: "Enterprise-grade reliability", hint: "SLA-backed uptime" },
+  { value: "∞", description: "Scalable automations", hint: "Grow without headcount" },
 ];
 
 const ImpactSection: React.FC = () => {
@@ -35,15 +36,18 @@ const ImpactSection: React.FC = () => {
   }, [controls, isInView]);
 
   const container: Variants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0, y: prefersReduced ? 0 : 8 },
     visible: {
       opacity: 1,
-      transition: prefersReduced ? undefined : { staggerChildren: 0.08, delayChildren: 0.2 },
+      y: 0,
+      transition: prefersReduced
+        ? undefined
+        : { staggerChildren: 0.08, delayChildren: 0.2, duration: 0.4, ease: "easeOut" },
     },
   };
 
   const item: Variants = {
-    hidden: { opacity: 0, y: prefersReduced ? 0 : 12 },
+    hidden: { opacity: 0, y: prefersReduced ? 0 : 14 },
     visible: {
       opacity: 1,
       y: 0,
@@ -55,28 +59,42 @@ const ImpactSection: React.FC = () => {
     <section
       id="stats"
       ref={ref}
-      className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative py-28 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
-      {/* graph-paper background */}
+      {/* aurora / gradient background */}
       <div
         aria-hidden
-        className="absolute inset-0 z-0 pointer-events-none [background-image:linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:40px_40px]"
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            "radial-gradient(1200px 600px at 10% -10%, oklch(0.22 0.07 230 / .6), transparent 60%), radial-gradient(900px 500px at 110% 10%, oklch(0.18 0.06 200 / .55), transparent 60%), radial-gradient(900px 500px at 50% 120%, oklch(0.22 0.08 260 / .45), transparent 60%)",
+        }}
       />
-      {/* overlay */}
+
+      {/* graph paper + vignette */}
       <div
         aria-hidden
-        className="absolute inset-0 z-[1] bg-gradient-to-b from-transparent via-background/20 to-background/60"
+        className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-background/20 to-background/60"
       />
+
+      {/* prominent math/graph background */}
+      <GraphBackground className="absolute inset-0 z-[1] pointer-events-none" />
 
       <motion.div
         className="relative z-10 max-w-3xl mx-auto text-center mb-16"
         initial={{ opacity: 0, y: prefersReduced ? 0 : -12 }}
         animate={controls}
-        variants={{ visible: { opacity: 1, y: 0, transition: { duration: 0.45 } } }}
+        variants={{ visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
       >
-        <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">Our Impact</h2>
-        <p className="text-lg md:text-xl text-muted-foreground">
-          Discover the measurable results of our AI automation solutions, trusted by businesses worldwide.
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1 text-sm text-white/80 backdrop-blur">
+          <span className="size-1.5 rounded-full bg-[oklch(0.55_0.15_220)] shadow-[0_0_12px_currentColor]" />
+          Proof in numbers
+        </span>
+        <h2 className="mt-4 text-4xl md:text-6xl font-bold tracking-tight">
+          Our Impact
+        </h2>
+        <p className="mt-4 text-lg md:text-xl text-muted-foreground">
+          Measurable outcomes from AI agents and end-to-end automations.
         </p>
       </motion.div>
 
@@ -89,94 +107,250 @@ const ImpactSection: React.FC = () => {
       >
         {stats.map((stat) => (
           <motion.article key={stat.description} variants={item} className="group">
-            <div className="relative rounded-2xl p-[1px] bg-[radial-gradient(circle_230px_at_0%_0%,#ffffff,#0c0d0d)] shadow-sm">
-              <span className="absolute right-[10%] top-[10%] h-[5px] w-[5px] rounded-full bg-white shadow-[0_0_10px_#fff] z-20 animate-[moveDot_6s_linear_infinite]" />
-
-              <div className="relative rounded-[16px] border border-[#202222] bg-[radial-gradient(circle_280px_at_0%_0%,#444444,#0c0d0d)] flex flex-col items-center justify-center text-white overflow-hidden p-8">
-                {/* ray */}
-                <span className="pointer-events-none absolute left-0 top-0 h-[45px] w-[220px] -rotate-[40deg] rounded-full bg-[#c7c7c7] opacity-40 blur-[10px] shadow-[0_0_50px_#fff]" />
-
-                {/* number */}
-                <div className="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-[linear-gradient(45deg,#000_4%,#fff,#000)]">
+            <div className="relative rounded-2xl p-[1px] bg-[radial-gradient(220px_180px_at_0%_0%,#fff,transparent)]/20">
+              <div className="relative rounded-2xl border border-white/10 bg-[radial-gradient(380px_260px_at_0%_0%,oklch(0.20_0.05_220),oklch(0.08_0_0))] text-white overflow-hidden p-8">
+                {/* light sweep */}
+                <span className="pointer-events-none absolute -top-16 left-1/3 h-48 w-48 -rotate-12 rounded-full bg-white/15 blur-3xl" />
+                <div className="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-[linear-gradient(45deg,#fff,oklch(0.80_0.07_230),#fff)]">
                   {stat.value}
                 </div>
+                <p className="mt-3 text-sm text-muted-foreground">{stat.description}</p>
+                {stat.hint && (
+                  <p className="mt-1 text-xs text-white/50">{stat.hint}</p>
+                )}
 
-                {/* description */}
-                <p className="mt-3 text-sm text-muted-foreground text-center">{stat.description}</p>
-
-                {/* lines */}
-                <span className="absolute left-[10%] right-[10%] top-[10%] h-px bg-[linear-gradient(90deg,#888_30%,#1d1f1f_70%)]" />
-                <span className="absolute left-[10%] right-[10%] bottom-[10%] h-px bg-[#2c2c2c]" />
-                <span className="absolute top-[10%] bottom-[10%] left-[10%] w-px bg-[linear-gradient(180deg,#747474_30%,#222424_70%)]" />
-                <span className="absolute top-[10%] bottom-[10%] right-[10%] w-px bg-[#2c2c2c]" />
+                {/* frame lines */}
+                <span className="absolute inset-x-10 top-8 h-px bg-white/10" />
+                <span className="absolute inset-x-10 bottom-8 h-px bg-white/5" />
+                <span className="absolute inset-y-10 left-10 w-px bg-white/10" />
+                <span className="absolute inset-y-10 right-10 w-px bg-white/5" />
               </div>
             </div>
           </motion.article>
         ))}
       </motion.div>
 
-      {/* wobble cards row */}
+      {/* wobble cards row (now with imagery + stronger backgrounds) */}
       <div className="relative z-10 mt-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
           <WobbleCard
-            containerClassName="col-span-1 lg:col-span-2 h-full bg-primary min-h-[500px] lg:min-h-[300px]"
+            containerClassName="col-span-1 lg:col-span-2 h-full"
+            className="min-h-[420px] lg:min-h-[320px]"
+            bgImageSrc="/ai-agents.webp"
+            highContrast
           >
-            <div className="max-w-xs">
-              <h2 className="text-left text-base md:text-xl lg:text-3xl font-semibold text-white">
+            <div className="max-w-xl space-y-4">
+              <h3 className="text-left text-2xl md:text-3xl font-semibold">
                 Build AI Agents for Your Business
-              </h2>
-              <p className="mt-4 text-left text-base text-neutral-200">
-                Automate repetitive tasks, scale operations, and deliver better customer experiences with custom AI agents.
+              </h3>
+              <p className="text-left text-base text-neutral-200">
+                Automate repetitive work, orchestrate workflows, and deliver
+                instant customer experiences with custom agents.
               </p>
+              <div className="flex gap-3 pt-2">
+                <a
+                  href="#pricing"
+                  className="inline-flex items-center rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-sm hover:bg-white/15"
+                >
+                  Get started
+                </a>
+                <a
+                  href="#showcase"
+                  className="inline-flex items-center rounded-xl border border-white/10 px-4 py-2 text-sm hover:bg-white/5"
+                >
+                  View demo
+                </a>
+              </div>
             </div>
-            <img
-              src="/ai-agents.webp"
-              width={500}
-              height={500}
-              alt="AI Agents Illustration"
-              className="absolute -right-4 lg:-right-[40%] -bottom-10 object-contain rounded-2xl"
-            />
           </WobbleCard>
 
-          <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-secondary">
-            <h2 className="max-w-80 text-left text-base md:text-xl lg:text-3xl font-semibold text-white">
+          <WobbleCard
+            containerClassName="col-span-1"
+            className="min-h-[320px]"
+            bgImageSrc="/support-grid.webp"
+          >
+            <h3 className="max-w-80 text-left text-2xl font-semibold">
               24/7 Intelligent Support
-            </h2>
+            </h3>
             <p className="mt-4 max-w-[26rem] text-left text-base text-neutral-200">
-              Our AI chatbots handle queries any time of day, ensuring your customers always get fast, reliable responses.
+              Chat, voice, and email agents that handle queries instantly and escalate seamlessly.
             </p>
           </WobbleCard>
 
-          <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
-            <div className="max-w-sm">
-              <h2 className="text-left text-base md:text-xl lg:text-3xl font-semibold text-white">
+          <WobbleCard
+            containerClassName="col-span-1 lg:col-span-3"
+            className="min-h-[480px] lg:min-h-[440px] xl:min-h-[320px]"
+            bgImageSrc="/automation.webp"
+            highContrast
+          >
+            <div className="max-w-xl space-y-4">
+              <h3 className="text-left text-2xl md:text-3xl font-semibold">
                 Scalable Automation for Enterprises
-              </h2>
-              <p className="mt-4 max-w-[26rem] text-left text-base text-neutral-200">
-                From startups to global corporations, our automation frameworks grow with your business—unlocking efficiency at scale.
+              </h3>
+              <p className="mt-4 max-w-[30rem] text-left text-base text-neutral-200">
+                From startups to global teams—ship automations that scale with usage, not headcount.
               </p>
+              <ul className="mt-2 grid grid-cols-2 gap-2 text-sm text-white/80">
+                <li>Human-in-the-loop controls</li>
+                <li>Secure integrations</li>
+                <li>Analytics & guardrails</li>
+                <li>SLA-backed uptime</li>
+              </ul>
             </div>
-            <img
-              src="/automation.webp"
-              width={500}
-              height={500}
-              alt="Automation illustration"
-              className="absolute -right-10 md:-right-[40%] lg:-right-[20%] -bottom-10 object-contain rounded-2xl"
-            />
           </WobbleCard>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes moveDot {
-          0%, 100% { top: 10%; right: 10%; }
-          25% { top: 10%; right: calc(100% - 35px); }
-          50% { top: calc(100% - 30px); right: calc(100% - 35px); }
-          75% { top: calc(100% - 30px); right: 10%; }
-        }
-      `}</style>
     </section>
   );
 };
+
+const GraphBackground: React.FC<{ className?: string }> = ({ className }) => {
+  const W = 1440;
+  const H = 900;
+  const MINOR = 12;  // small boxes
+  const MAJOR = 60;  // thicker lines & runners
+
+  return (
+    <svg
+      className={className}
+      viewBox={`0 0 ${W} ${H}`}
+      width="100%"
+      height="100%"
+      preserveAspectRatio="none"
+    >
+      <defs>
+        {/* Minor grid — SMALL boxes */}
+        <pattern id="gridMinor" width={MINOR} height={MINOR} patternUnits="userSpaceOnUse">
+          <path d={`M ${MINOR} 0 L 0 0 0 ${MINOR}`} stroke="rgba(255,255,255,0.14)" strokeWidth="1" />
+        </pattern>
+
+        {/* Major grid */}
+        <pattern id="gridMajor" width={MAJOR} height={MAJOR} patternUnits="userSpaceOnUse">
+          <path d={`M ${MAJOR} 0 L 0 0 0 ${MAJOR}`} stroke="rgba(255,255,255,0.28)" strokeWidth="1.1" />
+        </pattern>
+
+        {/* Soft center glow */}
+        <radialGradient id="centerGlow" cx="50%" cy="35%" r="70%">
+          <stop offset="0%" stopColor="rgba(255,255,255,0.10)" />
+          <stop offset="60%" stopColor="rgba(255,255,255,0.05)" />
+          <stop offset="100%" stopColor="rgba(0,0,0,0.0)" />
+        </radialGradient>
+
+        {/* Axes color (your primary) */}
+        <linearGradient id="axis" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stopColor="oklch(0.55 0.15 220)" stopOpacity="0.95" />
+          <stop offset="100%" stopColor="oklch(0.55 0.15 220)" stopOpacity="0.6" />
+        </linearGradient>
+
+        {/* Strong glow for runners */}
+        <filter id="glowStrong" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="5" result="b2" />
+          <feMerge>
+            <feMergeNode in="b2" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      {/* Subtle illumination so boxes pop */}
+      <rect x="0" y="0" width="100%" height="100%" fill="url(#centerGlow)" />
+
+      {/* Small-box grid */}
+      <rect x="0" y="0" width="100%" height="100%" fill="url(#gridMinor)" />
+      <rect x="0" y="0" width="100%" height="100%" fill="url(#gridMajor)" />
+
+      {/* Center axes (static) */}
+      <g opacity="0.9" filter="url(#glowStrong)">
+        <line x1="0" y1={H/2} x2={W} y2={H/2} stroke="url(#axis)" strokeWidth="1.5" />
+        <line x1={W/2} y1="0" x2={W/2} y2={H} stroke="url(#axis)" strokeWidth="1.5" />
+      </g>
+
+      {/* ===== RUNNING GLOWING LIGHTS ON THE GRID (reduced density) ===== */}
+      {/* Only every 3rd MAJOR line gets a runner + longer segments */}
+      <g opacity="0.6" filter="url(#glowStrong)">
+        {/* Horizontal runners */}
+        {Array.from({ length: Math.ceil(H / MAJOR) + 1 }).map((_, i) => {
+          if (i % 3 !== 0) return null;               // << reduced count
+          const y = i * MAJOR;
+          const k = Math.floor(i / 3);
+          const dash = "360 720";                     // << longer light segment + gap
+          const duration = 12 + ((k % 3) * 2);        // 12s, 14s, 16s
+          const delay = k * 0.6;                      // staggered starts
+          return (
+            <path
+              key={`hr-${i}`}
+              d={`M 0 ${y} L ${W} ${y}`}
+              fill="none"
+              stroke="oklch(0.75 0.16 220)"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeDasharray={dash}
+              pathLength={W}
+              opacity="0.9"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                from="0"
+                to={-W}
+                dur={`${duration}s`}
+                begin={`${delay}s`}
+                repeatCount="indefinite"
+              />
+            </path>
+          );
+        })}
+
+        {/* Vertical runners */}
+        {Array.from({ length: Math.ceil(W / MAJOR) + 1 }).map((_, i) => {
+          if (i % 3 !== 0) return null;               // << reduced count
+          const x = i * MAJOR;
+          const k = Math.floor(i / 3);
+          const dash = "360 720";                     // match horizontal
+          const duration = 14 + ((k % 3) * 2);        // 14s, 16s, 18s
+          const delay = k * 0.55;
+          return (
+            <path
+              key={`vr-${i}`}
+              d={`M ${x} 0 L ${x} ${H}`}
+              fill="none"
+              stroke="oklch(0.78 0.14 230)"
+              strokeWidth="2.0"
+              strokeLinecap="round"
+              strokeDasharray={dash}
+              pathLength={H}
+              opacity="0.85"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                from="0"
+                to={-H}
+                dur={`${duration}s`}
+                begin={`${delay}s`}
+                repeatCount="indefinite"
+              />
+            </path>
+          );
+        })}
+      </g>
+
+      {/* (Optional) VERY faint math curves for vibe only (no running lights here) */}
+      <g opacity="0.18">
+        <path
+          d="M 0 450 C 180 350, 360 550, 540 450 S 900 350, 1080 450 S 1260 550, 1440 450"
+          fill="none"
+          stroke="rgba(255,255,255,0.55)"
+          strokeWidth="1"
+        />
+        <path
+          d="M 0 420 C 180 520, 360 460, 540 480 S 900 500, 1080 460 S 1260 430, 1440 440"
+          fill="none"
+          stroke="rgba(255,255,255,0.35)"
+          strokeWidth="0.9"
+        />
+      </g>
+    </svg>
+  );
+};
+
 
 export default ImpactSection;

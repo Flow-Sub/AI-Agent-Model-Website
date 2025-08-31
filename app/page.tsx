@@ -481,18 +481,31 @@ export default function HomePage() {
       </section>
 
       <section id="showcase" className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20 fade-in-scroll">
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 neon-text">Showcase</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-              Explore our interactive demo showcasing the power of our AI-driven interface
-            </p>
-          </div>
-          <div className="flex justify-center">
-            <Card />
-          </div>
-        </div>
-      </section>
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-20 fade-in-scroll">
+      <h2 className="text-4xl md:text-6xl font-bold mb-8 neon-text">Showcase</h2>
+      <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
+        Explore our interactive demo showcasing the power of our AI-driven interface
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      {/* Left: Card (no wrapper) */}
+      <div className="order-1">
+        <Card />
+      </div>
+
+      {/* Right: Spline (no wrapper; explicit responsive height) */}
+      <div className="order-2">
+        <Spline
+          scene="https://prod.spline.design/qNQ8Wc0EXTHcP7Eb/scene.splinecode"
+          className="w-full h-[420px] sm:h-[520px] md:h-[520px] lg:h-[600px]"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary/10">
         <div className="max-w-4xl mx-auto text-center fade-in-scroll">
