@@ -17,12 +17,12 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { value: "500+", description: "Businesses transformed", hint: "Across SaaS, Retail, Fintech" },
-  { value: "24/7", description: "Always-on AI support", hint: "No queue, no downtime" },
-  { value: "4.9/5", description: "Client satisfaction score", hint: "NPS from onboarded clients" },
-  { value: "1000+", description: "AI agents deployed worldwide", hint: "Voice, chat & backend" },
-  { value: "99.9%", description: "Enterprise-grade reliability", hint: "SLA-backed uptime" },
-  { value: "∞", description: "Scalable automations", hint: "Grow without headcount" },
+  { value: "60%", description: "Reduction in administrative time", hint: "" },
+  { value: "15%", description: "Increase in sales", hint: "" },
+  { value: "20 h/m", description: "Saved for a retail business", hint: "" },
+  { value: "40%", description: "Less hotel administration workload", hint: "" },
+  { value: "25%", description: "Reduction in food waste", hint: "" },
+  { value: "2x", description: "Conversions for event managers video brochures", hint: "" },
 ];
 
 const ImpactSection: React.FC = () => {
@@ -94,7 +94,7 @@ const ImpactSection: React.FC = () => {
           Our Impact
         </h2>
         <p className="mt-4 text-lg md:text-xl text-muted-foreground">
-          Measurable outcomes from AI agents and end-to-end automations.
+          Measurable results that show how our solutions transform businesses every day.
         </p>
       </motion.div>
 
@@ -133,71 +133,73 @@ const ImpactSection: React.FC = () => {
       {/* wobble cards row (now with imagery + stronger backgrounds) */}
       <div className="relative z-10 mt-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
-          <WobbleCard
-            containerClassName="col-span-1 lg:col-span-2 h-full"
-            className="min-h-[420px] lg:min-h-[320px]"
-            bgImageSrc="/ai-agents.webp"
-            highContrast
-          >
-            <div className="max-w-xl space-y-4">
-              <h3 className="text-left text-2xl md:text-3xl font-semibold">
-                Build AI Agents for Your Business
-              </h3>
-              <p className="text-left text-base text-neutral-200">
-                Automate repetitive work, orchestrate workflows, and deliver
-                instant customer experiences with custom agents.
-              </p>
-              <div className="flex gap-3 pt-2">
-                <a
-                  href="#pricing"
-                  className="inline-flex items-center rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-sm hover:bg-white/15"
-                >
-                  Get started
-                </a>
-                <a
-                  href="#showcase"
-                  className="inline-flex items-center rounded-xl border border-white/10 px-4 py-2 text-sm hover:bg-white/5"
-                >
-                  View demo
-                </a>
-              </div>
-            </div>
-          </WobbleCard>
+          
 
-          <WobbleCard
-            containerClassName="col-span-1"
-            className="min-h-[320px]"
-            bgImageSrc="/support-grid.webp"
-          >
-            <h3 className="max-w-80 text-left text-2xl font-semibold">
-              24/7 Intelligent Support
-            </h3>
-            <p className="mt-4 max-w-[26rem] text-left text-base text-neutral-200">
-              Chat, voice, and email agents that handle queries instantly and escalate seamlessly.
-            </p>
-          </WobbleCard>
+         
 
-          <WobbleCard
-            containerClassName="col-span-1 lg:col-span-3"
-            className="min-h-[480px] lg:min-h-[440px] xl:min-h-[320px]"
-            bgImageSrc="/automation.webp"
-            highContrast
-          >
-            <div className="max-w-xl space-y-4">
-              <h3 className="text-left text-2xl md:text-3xl font-semibold">
-                Scalable Automation for Enterprises
-              </h3>
-              <p className="mt-4 max-w-[30rem] text-left text-base text-neutral-200">
-                From startups to global teams—ship automations that scale with usage, not headcount.
-              </p>
-              <ul className="mt-2 grid grid-cols-2 gap-2 text-sm text-white/80">
-                <li>Human-in-the-loop controls</li>
-                <li>Secure integrations</li>
-                <li>Analytics & guardrails</li>
-                <li>SLA-backed uptime</li>
-              </ul>
-            </div>
-          </WobbleCard>
+         <div
+  className="col-span-1 lg:col-span-3 min-h-[480px] lg:min-h-[440px] xl:min-h-[320px] relative bg-cover bg-center rounded-2xl overflow-hidden"
+  style={{ backgroundImage: "url('/impact-bg.webp')" }}
+>
+  <div className="absolute inset-0 bg-black/60"></div> {/* dark overlay */}
+
+  <div className="relative z-10 max-w-4xl mx-auto space-y-8 text-white p-8">
+    <h3 className="text-left text-3xl md:text-4xl font-bold">
+      Client Stories
+    </h3>
+    <p className="italic text-left text-lg text-white/80">
+      “These are real people whose businesses—and lives—have been changed by our solutions.”
+    </p>
+
+    {/* Grid cards */}
+    <div className="grid md:grid-cols-2 gap-6">
+      <div className="bg-white/10 p-6 rounded-2xl shadow-lg hover:bg-white/20 transition-all">
+        <h4 className="font-bold text-xl mb-2">Samira’s Story</h4>
+        <p className="mb-4">
+          <span className="font-semibold">Therapy & educational support</span> for her son with Down syndrome.
+        </p>
+        <blockquote className="italic text-white/70 border-l-4 border-primary pl-4">
+          “I felt like someone finally saw us.”
+        </blockquote>
+      </div>
+
+      <div className="bg-white/10 p-6 rounded-2xl shadow-lg hover:bg-white/20 transition-all">
+        <h4 className="font-bold text-xl mb-2">Houssem’s Journey</h4>
+        <p className="mb-4">
+          <span className="font-semibold">Medical support</span> while battling cancer, keeping his family afloat.
+        </p>
+        <blockquote className="italic text-white/70 border-l-4 border-primary pl-4">
+          “Your support helped my family stay strong during treatment.”
+        </blockquote>
+      </div>
+    </div>
+
+    {/* Buttons */}
+    <div className="flex flex-wrap gap-3 pt-6">
+      <a
+        href="#support"
+        className="inline-flex items-center rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-sm hover:bg-white/15"
+      >
+        Support Our Mission
+      </a>
+      <a
+        href="#contact"
+        className="inline-flex items-center rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-sm hover:bg-white/15"
+      >
+        Contact Us
+      </a>
+      <a
+        href="#trial"
+        className="inline-flex items-center rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-sm hover:bg-white/15"
+      >
+        Start Free Trial
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
         </div>
       </div>
     </section>
@@ -238,7 +240,7 @@ const GraphBackground: React.FC<{ className?: string }> = ({ className }) => {
 
         {/* Axes color (your primary) */}
         <linearGradient id="axis" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%"   stopColor="oklch(0.55 0.15 220)" stopOpacity="0.95" />
+          <stop offset="0%" stopColor="oklch(0.55 0.15 220)" stopOpacity="0.95" />
           <stop offset="100%" stopColor="oklch(0.55 0.15 220)" stopOpacity="0.6" />
         </linearGradient>
 
@@ -261,8 +263,8 @@ const GraphBackground: React.FC<{ className?: string }> = ({ className }) => {
 
       {/* Center axes (static) */}
       <g opacity="0.9" filter="url(#glowStrong)">
-        <line x1="0" y1={H/2} x2={W} y2={H/2} stroke="url(#axis)" strokeWidth="1.5" />
-        <line x1={W/2} y1="0" x2={W/2} y2={H} stroke="url(#axis)" strokeWidth="1.5" />
+        <line x1="0" y1={H / 2} x2={W} y2={H / 2} stroke="url(#axis)" strokeWidth="1.5" />
+        <line x1={W / 2} y1="0" x2={W / 2} y2={H} stroke="url(#axis)" strokeWidth="1.5" />
       </g>
 
       {/* ===== RUNNING GLOWING LIGHTS ON THE GRID (reduced density) ===== */}

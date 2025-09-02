@@ -39,6 +39,7 @@
     "@radix-ui/react-tooltip": "1.1.6",
     "@remix-run/react": "latest",
     "@splinetool/react-spline": "^4.1.0",
+    "@splinetool/runtime": "^1.10.53",
     "@splinetool/viewer": "^1.10.53",
     "@sveltejs/kit": "latest",
     "@vercel/analytics": "latest",

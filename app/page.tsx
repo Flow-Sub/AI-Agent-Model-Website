@@ -100,25 +100,25 @@ export default function HomePage() {
     {
       icon: <Lightbulb className="h-8 w-8" />,
       title: "Discovery & Strategy",
-      description: "We start by understanding your business goals and identifying key areas for AI automation.",
+      description: "We begin by understanding your goals and pain points. Many SMEs feel overwhelmed by manual tasks and costly, complex tools we’re here to change that.",
       step: "01",
     },
     {
       icon: <Bot className="h-8 w-8" />,
-      title: "Agent Development",
-      description: "Our experts design and build a custom AI agent tailored to your specific needs and workflows.",
+      title: "Development & Selection",
+      description: "Choose from our ready-to-use AI apps, request a custom ERP/CRM, or explore innovative options like our TV-in-a-Card campaigns.",
       step: "02",
     },
     {
       icon: <Wrench className="h-8 w-8" />,
       title: "Integration & Testing",
-      description: "We seamlessly integrate the AI agent into your existing systems and conduct rigorous testing.",
+      description: "We connect your new solution with existing systems, ensure seamless automation, and fully test video brochure deployments.",
       step: "03",
     },
     {
       icon: <Rocket className="h-8 w-8" />,
-      title: "Launch & Optimize",
-      description: "Your AI agent goes live! We monitor performance and continuously optimize for best results.",
+      title: "Launch & Measure",
+      description: "Once live, you’ll track ROI through an intuitive dashboard. Most clients see time savings and revenue gains that quickly pay back their initial investment.",
       step: "04",
     },
   ]
@@ -175,11 +175,12 @@ export default function HomePage() {
               AI-Powered Business Automation
             </Badge>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 neon-text text-balance leading-tight">
-              Build an AI Agent for Your Business
+              Make Technology Simple & Powerful
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto text-pretty leading-relaxed">
-              Transform your business operations with intelligent AI agents that work 24/7, providing uninterrupted
-              engagement and support for your customers while you focus on growth.
+              Explain that technology should make life easier, not harder, and that your
+              company’s mission is to democratize AI and marketing so anyone can succeed. Mention that
+              every purchase also gives back to vulnerable communities.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button size="lg" className="neon-glow text-lg px-10 py-7 font-semibold">
@@ -202,10 +203,9 @@ export default function HomePage() {
       <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20 fade-in-scroll">
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 neon-text">Our AI Services</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 neon-text">Our Services</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-              Comprehensive AI solutions designed to revolutionize your business operations and drive unprecedented
-              growth
+              We provide smart, custom solutions that permanently fix business challenges—so you save time, reduce costs, and scale with confidence.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-10">
@@ -214,25 +214,24 @@ export default function HomePage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
                   <Zap className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-2xl font-bold mb-4">24/7 Customer Support</CardTitle>
+                <CardTitle className="text-2xl font-bold mb-4">AI Chatbots</CardTitle>
                 <CardDescription className="text-lg leading-relaxed">
-                  Intelligent AI agents that never sleep, providing instant responses and support to your customers
-                  around the clock with human-like understanding.
+                 Our AI chatbots deliver instant, human-like conversations, helping businesses provide 24/7 support and improve customer engagement.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground/90">Instant response times</span>
+                    <span className="text-foreground/90">Saves time with automated responses</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground/90">Multi-language support</span>
+                    <span className="text-foreground/90">Enhances customer satisfaction</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground/90">Seamless escalation</span>
+                    <span className="text-foreground/90">Reduces support team workload</span>
                   </li>
                 </ul>
               </CardContent>
@@ -243,25 +242,24 @@ export default function HomePage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
                   <Shield className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-2xl font-bold mb-4">Intelligent Automation</CardTitle>
+                <CardTitle className="text-2xl font-bold mb-4">Predictive Analytics</CardTitle>
                 <CardDescription className="text-lg leading-relaxed">
-                  Streamline your business processes with AI agents that handle complex tasks and decision-making
-                  automatically with precision and reliability.
+                 We use predictive analytics to forecast trends, customer behavior, and business outcomes, enabling smarter decision-making.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground/90">Process optimization</span>
+                    <span className="text-foreground/90">Identifies future opportunities</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground/90">Smart decision making</span>
+                    <span className="text-foreground/90">Minimizes risks with data-driven insights</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground/90">Error reduction</span>
+                    <span className="text-foreground/90">Improves business efficiency</span>
                   </li>
                 </ul>
               </CardContent>
@@ -272,25 +270,24 @@ export default function HomePage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
                   <Clock className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-2xl font-bold mb-4">Continuous Learning</CardTitle>
+                <CardTitle className="text-2xl font-bold mb-4">Computer Vision</CardTitle>
                 <CardDescription className="text-lg leading-relaxed">
-                  AI agents that evolve with your business, learning from interactions to provide increasingly better
-                  service and adapt to changing needs.
+                  Our computer vision solutions analyze and interpret images and videos, enabling automation, quality control, and enhanced security.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground/90">Adaptive responses</span>
+                    <span className="text-foreground/90">Automates repetitive visual tasks</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground/90">Performance analytics</span>
+                    <span className="text-foreground/90">Boosts monitoring precision</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground/90">Continuous improvement</span>
+                    <span className="text-foreground/90">Enhances safety and surveillance</span>
                   </li>
                 </ul>
               </CardContent>
@@ -304,8 +301,7 @@ export default function HomePage() {
           <div className="text-center mb-20 fade-in-scroll">
             <h2 className="text-4xl md:text-6xl font-bold mb-8 neon-text">Launch in 4 Simple Steps</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-              Our streamlined process makes it easy to deploy a powerful AI agent for your business with precision and
-              care.
+              Our process is designed to simplify digital transformation—helping you move from challenges to lasting solutions with clarity and confidence.
             </p>
           </div>
 
@@ -319,9 +315,8 @@ export default function HomePage() {
               {processSteps.map((step, index) => (
                 <div
                   key={index}
-                  className={`process-step opacity-0 translate-y-8 transition-all duration-700 ease-out md:grid md:grid-cols-2 md:gap-x-16 items-center ${
-                    index % 2 !== 0 ? "md:text-right" : ""
-                  }`}
+                  className={`process-step opacity-0 translate-y-8 transition-all duration-700 ease-out md:grid md:grid-cols-2 md:gap-x-16 items-center ${index % 2 !== 0 ? "md:text-right" : ""
+                    }`}
                 >
                   <div className={`${index % 2 !== 0 ? "md:col-start-2" : ""}`}>
                     <UiCard className="neon-glow glass-effect hover:scale-105 transition-all duration-500 relative">
@@ -404,47 +399,38 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: "Starter",
-                price: "$99",
-                period: "/month",
-                description: "Perfect for small businesses getting started with AI",
-                features: [
-                  "1 AI Agent",
-                  "1,000 interactions/month",
-                  "Basic analytics",
-                  "Email support",
-                  "Standard integrations",
-                ],
-              },
-              {
-                name: "Professional",
-                price: "$299",
-                period: "/month",
-                description: "Ideal for growing businesses with higher volume needs",
-                features: [
-                  "3 AI Agents",
-                  "10,000 interactions/month",
-                  "Advanced analytics",
-                  "Priority support",
-                  "Custom integrations",
-                  "Multi-language support",
-                ],
-                popular: true,
-              },
-              {
-                name: "Enterprise",
-                price: "Custom",
-                period: "",
-                description: "Tailored solutions for large organizations",
-                features: [
-                  "Unlimited AI Agents",
-                  "Unlimited interactions",
-                  "Custom analytics dashboard",
-                  "24/7 dedicated support",
-                  "White-label options",
-                  "Advanced security features",
-                ],
-              },
+    name: "Starter Plan",
+    price: "300–500 TND",
+    period: "/month",
+    description: "Designed for small businesses; includes access to one AI module and basic CRM features.",
+    features: [
+      "1 AI Module",
+      "Basic CRM features",
+    ],
+  },
+  {
+    name: "Professional Plan",
+    price: "600–900 TND",
+    period: "/month",
+    description: "For growing businesses; includes multiple AI apps, ERP modules & a TV-in-a-Card package. One-time setup fee: 1 500–5 000 TND.",
+    features: [
+      "Multiple AI apps",
+      "ERP modules",
+      "TV-in-a-Card package",
+    ],
+    popular: true, 
+  },
+  {
+    name: "Enterprise Plan",
+    price: "Custom Pricing",
+    period: "",
+    description: "Custom solutions for larger organizations; unlimited users, AI development, dedicated support. Contact us for a tailored quote.",
+    features: [
+      "Unlimited AI apps",
+      "Bespoke AI development",
+      "Dedicated support",
+    ],
+  },
             ].map((plan, index) => (
               <UiCard
                 key={index}
@@ -462,7 +448,7 @@ export default function HomePage() {
                   <CardDescription className="text-base">{plan.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-3 mb-6">
+                  <ul className="space-y-3 mb-6 h-24">
                     {plan.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center gap-2">
                         <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
@@ -481,49 +467,71 @@ export default function HomePage() {
       </section>
 
       <section id="showcase" className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/20">
-  <div className="max-w-7xl mx-auto">
-    <div className="text-center mb-20 fade-in-scroll">
-      <h2 className="text-4xl md:text-6xl font-bold mb-8 neon-text">Showcase</h2>
-      <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-        Explore our interactive demo showcasing the power of our AI-driven interface
-      </p>
-    </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20 fade-in-scroll">
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 neon-text">Showcase</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
+              Explore our interactive demo showcasing the power of our AI-driven interface
+            </p>
+          </div>
 
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-      {/* Left: Card (no wrapper) */}
-      <div className="order-1">
-        <Card />
-      </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            {/* Left: Card (no wrapper) */}
+            <div className="order-1">
+              <Card />
+            </div>
 
-      {/* Right: Spline (no wrapper; explicit responsive height) */}
-      <div className="order-2">
-        <Spline
-          scene="https://prod.spline.design/qNQ8Wc0EXTHcP7Eb/scene.splinecode"
-          className="w-full h-[420px] sm:h-[520px] md:h-[520px] lg:h-[600px]"
-        />
-      </div>
-    </div>
-  </div>
-</section>
-
-
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary/10">
-        <div className="max-w-4xl mx-auto text-center fade-in-scroll">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 neon-text">Ready to Transform Your Business?</h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Join hundreds of businesses already using AI agents to automate their operations and boost productivity.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="neon-glow text-lg px-8 py-6">
-              Start Your Free Trial
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-transparent">
-              Schedule a Demo
-            </Button>
+            {/* Right: Spline (no wrapper; explicit responsive height) */}
+            <div className="order-2">
+              <Spline
+                scene="https://prod.spline.design/qNQ8Wc0EXTHcP7Eb/scene.splinecode"
+                className="w-full h-[420px] sm:h-[520px] md:h-[520px] lg:h-[600px]"
+              />
+            </div>
           </div>
         </div>
       </section>
+
+
+   <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary/10">
+  <div className="max-w-4xl mx-auto text-center fade-in-scroll">
+    <h2 className="text-3xl md:text-5xl font-bold mb-6 neon-text">
+      Schedule a Demo or Start a Free Trial
+    </h2>
+    <p className="text-xl text-muted-foreground mb-8">
+      We’re eager to learn about your business challenges and show you how AI can streamline your operations. 
+      Share your biggest manual task and let us demonstrate a tailored solution.
+    </p>
+
+    <form className="grid grid-cols-1 gap-4 mb-8">
+      <input 
+        type="text" 
+        placeholder="Your Name" 
+        className="p-3 rounded-lg w-full bg-white/10 text-white"
+      />
+      <input 
+        type="email" 
+        placeholder="Your Email" 
+        className="p-3 rounded-lg w-full bg-white/10 text-white"
+      />
+      <textarea 
+        placeholder="What’s one manual task you would love to never do again?" 
+        className="p-3 rounded-lg w-full bg-white/10 text-white"
+      ></textarea>
+      <Button 
+        type="submit" 
+        className="neon-glow text-lg px-10 py-7 font-semibold"
+      >
+        Submit
+      </Button>
+    </form>
+
+    <p className="text-sm text-neutral-400">
+      When you book a demo, you’re taking the first step toward saving time and growing your business. You’re also helping fund treatment for cancer patients and provide support for individuals with Down syndrome.
+    </p>
+  </div>
+</section>
+
 
       <footer className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30 border-t border-border">
         <div className="max-w-7xl mx-auto">
@@ -537,7 +545,7 @@ export default function HomePage() {
                 <span className="text-xl font-bold neon-text tracking-tight">AibotAutomation</span>
               </div>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Transforming businesses with intelligent AI agents that work 24/7 to drive growth and efficiency.
+                AIBots Automations × TV in a Card transforms businesses through intuitive AI and memorable video marketing and we donate 10% of profits to cancer patients, people with Down syndrome, and families in crisis.
               </p>
               <div className="flex space-x-4">
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -623,13 +631,20 @@ export default function HomePage() {
                     href="mailto:hello@aibotautomation.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    hello@aibotautomation.com
+                    Marwan Belhadj, CEO –
+                    marwan@aibotsautomations.com
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="h-4 w-4 text-primary flex-shrink-0" />
                   <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">
-                    +1 (234) 567-8900
+                    00216 425 55552
+                  </a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Phone className="h-4 w-4 text-primary flex-shrink-0" />
+                  <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">
+                    0090 506 041 6462
                   </a>
                 </li>
                 <li className="flex items-start gap-3">
